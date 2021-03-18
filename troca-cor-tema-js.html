@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temas</title>
+    <style>
+        body.tema-dark {
+            background-color: #555;
+        }
+
+        body.tema-kid {
+            background-color: #8a8af5;
+        }
+
+        body.tema-feminino {
+            background-color: #fc9ddc;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        li a {
+            color: #666;
+        }
+
+        li+li a {
+            color: #000;
+        }
+
+        li+li+li a {
+            color: #3d3df3;
+        }
+
+        li+li+li+li a {
+            color: #e64db3;
+        }
+    </style>
+
+</head>
+
+<body class="tema-default">
+    <div class="temas">
+        <ul>
+            <li class="tema-default"><a href="javascript:void(0)">Default</a></li>
+            <li class="tema-dark"><a href="javascript:void(0)">Dark</a></li>
+            <li class="tema-kid"><a href="javascript:void(0)">Kid</a></li>
+            <li class="tema-feminino"><a href="javascript:void(0)">Feminino</a></li>
+        </ul>
+    </div>
+
+
+    <script>
+        var temas = document.querySelectorAll(".temas li");
+        for (let li of temas) {
+            li.addEventListener("click", () => {
+               var classTema = li.className;
+               document.querySelector("body").removeAttribute("class");
+               document.querySelector("body").classList.add(classTema);
+            })
+        }
+    </script>
+</body>
+
+</html>
